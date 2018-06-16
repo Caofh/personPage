@@ -1,0 +1,59 @@
+<scroll-view class="main"
+    scroll-y="true"
+    scroll-top="{{scrollTop}}"
+    style="width: {{winWidth}}px; height: {{winHeight}}px;"
+    upper-threshold="50"
+    lower-threshold="100"
+    bindscrolltolower="scrolltolower"
+    bindscroll="listenScroll"
+    >
+
+    <view class="introduce of-flex-x-start">
+        <view class="of-img-par">
+            <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529130529390&di=8c4e8b3cc886b2d2921048602f6650eb&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201605%2F20%2F20160520112708_QVUEM.jpeg"></image>
+        </view>
+        <view>
+            <view>Baby</view>
+            <view>Person Page</view>
+        </view>
+
+
+
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--轮播部分-->
+    <swiper class="subject"
+        indicator-dots="true"
+        indicator-color="rgba(0, 0, 0, .3)"
+        autoplay="true"
+        interval="5000"
+        >
+
+        <swiper-item class="subject-item"
+            wx:for="{{data}}" wx:key="index" wx:for-item="item"
+            style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529128475300&di=aad025cb62fd4cbaf2ce7b3d1e5b81b0&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F5366d0160924ab18778421c43ffae6cd7a890bb7.jpg)">
+
+            <!--蒙版-->
+            <view class="cover"></view>
+
+            <view class="title-par">
+              <view class="title">{{item.name ? item.name : ''}}</view>
+            </view>
+
+        </swiper-item>
+
+    </swiper>
+
+
+</scroll-view>

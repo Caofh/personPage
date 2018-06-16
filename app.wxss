@@ -1,0 +1,7 @@
+
+@import './util-css/common'
+@import './util-css/bootstrap_icon'
+
+view {
+  box-sizing: border-box;
+}

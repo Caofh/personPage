@@ -1,0 +1,31 @@
+<!--authorize.wxml-->
+<view class="main">
+  <view class="auth-fail">
+    <image class="auth-fail-img" src="/images/pages/account/auth_fail.png"></image>
+  </view>
+  <view class="auth-title">登录失败</view>
+  <view class="auth-info">
+    <view class="auth-info-first">登录OFashion迷橙需允许授权，请重新进入并允许授权</view>
+    <view class="auth-info-second">拒绝授权OFashion迷橙小程序将无法使用领取优惠券、下单、查看订单等功能。</view>
+  </view>
+  <view class="auth-process">
+    <view class="auth-process-title">如何允许微信授权</view>
+    <view class="auth-process-item">
+      <view class="auth-process-item-txt">
+        1.退出OFashion迷橙小程序，十分钟后重新进入；或在小程序列表中左滑删除OFashion迷橙小程序后，重新搜索“OFashion迷橙”进入。
+      </view>
+      <view class="auth-process-item-first">
+        <image src="/images/pages/account/combinedpe.png"></image>
+      </view>
+    </view>
+    <view class="auth-process-item">
+      <view class="auth-process-item-txt">
+        2.点击进入OFashion迷橙小程序后，将出现以下微信授权页面，点击“允许”。
+      </view>
+      <view class="auth-process-item-second">
+        <image src="/images/pages/account/combined_shape.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+

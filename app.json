@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/index/index",
+    "pages/account/authorize/authorize"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "#fff"
+  }
+}

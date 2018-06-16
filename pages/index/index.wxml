@@ -1,0 +1,81 @@
+<scroll-view class="main"
+    scroll-y="true"
+    scroll-top="{{scrollTop}}"
+    style="width: {{winWidth}}px; height: {{winHeight}}px;"
+    upper-threshold="50"
+    lower-threshold="100"
+    bindscrolltolower="scrolltolower"
+    bindscroll="listenScroll"
+    >
+
+    <!--轮播部分-->
+    <swiper class="subject"
+        indicator-dots="true"
+        indicator-color="rgba(0, 0, 0, .3)"
+        autoplay="true"
+        interval="5000"
+        style="height:{{resourceHeight}}px;"
+        >
+
+        <swiper-item class="subject-item"
+            wx:for="{{data.banner_list}}" wx:key="index" wx:for-item="item"
+            style="background-image:url({{item.banner_image.path ? item.banner_image.path : ''}})">
+
+            <!--蒙版-->
+            <view class="cover"></view>
+
+            <view class="title-par">
+              <view class="title">{{item.title ? item.title : ''}}</view>
+              <view class="sub-title">{{item.sub_title ? item.sub_title : ''}}</view>
+            </view>
+
+        </swiper-item>
+
+    </swiper>
+
+    <!--下沉资源部分-->
+    <view class="resource">
+        <view class="resource-item"
+            wx:for="{{data.resource_list}}" wx:key="index" wx:for-item="item"
+            style="background-image:url({{item.cover_image.path ? item.cover_image.path : ''}});height:{{resourceHeight}}px;">
+
+            <!--蒙版-->
+            <view class="cover"></view>
+
+            <view class="title-par">
+              <view class="title">{{item.title ? item.title : ''}}</view>
+              <view class="sub-title">{{item.sub_title ? item.sub_title : ''}}</view>
+
+              <view class="of-flex-x-center context">
+                <view class="of-flex-x-center">
+                  <view class="img-par glyphicon glyphicon-heart-empty"></view>
+                  <view class="count-par">{{item.favorite_user_count ? item.favorite_user_count : '-'}}</view>
+                </view>
+
+                <view class="of-flex-x-center">
+                  <view class="img-par glyphicon glyphicon-eye-open"></view>
+                  <view class="count-par">{{item.reading_num ? item.reading_num : '-'}}</view>
+                </view>
+              </view>
+            </view>
+
+        </view>
+    </view>
+
+    <!--底部部分-->
+    <view class="footer">
+        <view class="of-img-par" style="height: {{brandImgHeight}}px;">
+            <image src="{{data.brand_bottom_img_info.img_url ? data.brand_bottom_img_info.img_url : ''}}"></image>
+        </view>
+
+        <view class="footer-context">
+            <view wx:if="{{data.brand_bottom_img_info && data.brand_bottom_img_info.describ}}">
+              {{data.brand_bottom_img_info.describ ? data.brand_bottom_img_info.describ : ''}}
+            </view>
+            <view wx:if="{{data.brand_bottom_img_info && data.brand_bottom_img_info.sub_describ}}">
+              {{data.brand_bottom_img_info.sub_describ ? data.brand_bottom_img_info.sub_describ : ''}}
+            </view>
+        </view>
+    </view>
+
+</scroll-view>

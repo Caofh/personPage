@@ -1,0 +1,224 @@
+
+/*
+全站样式规则：
+字体颜色规则：#333(标题),#666（标题下内容及正文）,#999(辅助内容)
+
+*/
+
+/*
+页面统一风格common系列（持续更新）：
+1.统一风格: 按钮(100px,30px)
+2.统一风格: 文本框(宽度为100px和宽度为200px的两种文本框)
+3.统一风格: select(宽度为100px和宽度为200px的两种select)
+4.统一风格: position三种位置、浮动、清除浮动
+5.统一风格: 省略号系列（单行省略号和多行省略号）,注：多行省略号目前只支持chrome浏览器，存在兼容性问题
+6.统一风格: <a>标签样式
+7.统一风格: flex布局相关
+8.统一风格: 隐藏元素（of-hidden）
+9.统一风格: <div>四个方向边框，自由搭配（of-border-r、of-border-l、of-border-t、of-border-b）
+10.统一风格: 颜色系列(of-red、of-f71等)
+
+*/
+
+/*统一风格：颜色系列*/
+.of-f71{
+  color:#f71;
+}
+.of-red{
+  color:#e66161;
+}
+.of-blue{
+  color:#265D9C;
+}
+.of-999{
+  color:#999;
+}
+.of-666{
+  color:#666;
+}
+/*---*/
+
+/*统一风格: 按钮(100px,30px)*/
+.of-btn{
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background: #f71;
+  border-radius: 2px;
+  cursor:pointer;
+  text-decoration: none;
+}
+.of-btn:hover{
+  text-decoration:none;
+  color:#fff;
+}
+
+/*统一风格: 文本框(宽度为100px和宽度为200px的两种文本框)*/
+.of-input{
+  width:100px;
+  height:30px;
+  line-height:30px;
+  font-size:12px;
+  border: 1px solid #cccccc;
+  padding: 0 5px;
+  color:#666;
+}
+.of-input-w200{
+  width:200px;
+  height:30px;
+  line-height:30px;
+  font-size:12px;
+  border: 1px solid #cccccc;
+  padding: 0 5px;
+  color:#666;
+}
+.of-input:active, .of-input:focus,
+.of-input-w200:active, .of-input-w200:focus{
+  outline: none;
+}
+
+/*统一风格: select(宽度为100px和宽度为200px的两种select)*/
+.of-select{
+  width:100px;
+  height:30px;
+  line-height:30px;
+  border: 1px solid #ccc; /* 兼容firefox*/
+  box-shadow: 0 0 0 0 #fff; /* 兼容chrome*/
+  background: #fff;
+  color:#666;
+}
+.of-select-w200{
+  width:200px;
+  height:30px;
+  line-height:30px;
+  border: 1px solid #ccc; /* 兼容firefox*/
+  box-shadow: 0 0 0 0 #fff; /* 兼容chrome*/
+  background: #fff;
+  color:#666;
+}
+.of-select:active, .of-select:focus,
+.of-select-w200:active, .of-select-w200:focus{
+  outline: none;
+}
+
+/*统一风格: position三种位置、浮动、清除浮动*/
+.of-relative{
+  position:relative;
+}
+.of-absolute{
+  position:absolute;
+}
+.of-fixed{
+  position:fixed;
+}
+.of-float{
+  float:left;
+}
+.of-clear{
+  clear:both;
+}
+
+/*统一风格: 省略号系列（单行省略号和多行省略号）,注：多行省略号目前只支持chrome浏览器，存在兼容性问题*/
+.of-ellipsis-single{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.of-ellipsis-more{ /* 默认两行省略,如多行自行修改下方-webkit-line-clamp值：改为想要省略的行数*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/*统一风格：<a>标签*/
+.of-a{
+  color:#265D9C;
+  text-decoration:none;
+  cursor:pointer;
+}
+.of-a:hover{
+  text-decoration:underline;
+}
+
+/*统一风格flex布局*/
+.of-flex-x-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.of-flex-x-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.of-flex-x-start{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.of-flex-x-end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.of-flex-y-between{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.of-flex-y-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.of-flex-y-start{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.of-flex-y-end{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*统一风格隐藏元素*/
+.of-hidden{
+  display:none;
+}
+
+/*统一风格自定义div单个方向边框*/
+.of-border-t{
+  border-top:1px solid #f0f0f0;
+}
+.of-border-b{
+  border-bottom:1px solid #f0f0f0;
+}
+.of-border-l{
+  border-left:1px solid #f0f0f0;
+}
+.of-border-r{
+  border-right:1px solid #f0f0f0;
+}
+
+/*图片容器*/
+.of-img-par {
+    position: relative;
+}
+.of-img-par > image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
