@@ -10,50 +10,133 @@
 
     <view class="introduce of-flex-x-start">
         <view class="of-img-par">
-            <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529130529390&di=8c4e8b3cc886b2d2921048602f6650eb&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201605%2F20%2F20160520112708_QVUEM.jpeg"></image>
+            <image src="http://118.190.207.166:8000/personPage/images/img_1.jpeg"></image>
         </view>
-        <view>
-            <view>Baby</view>
+        <view class="intro-content of-flex-y-center" style="align-items: flex-start;">
+            <view class="name">Baby</view>
             <view>Person Page</view>
         </view>
 
-
-
     </view>
 
+    <view class="title">What can you record forever</view>
 
+    <view class="base-list">
+        <view class="list-item">
+            <view class="item-date">——2018-06-15 13:10:10——</view>
 
+            <!--轮播部分-->
+            <view class="item-carousel">
+                <view class="carousel-title">My funny video</view>
+                <swiper class="subject"
+                    indicator-dots="true"
+                    indicator-color="rgba(0, 0, 0, .3)"
+                    autoplay="true"
+                    interval="5000"
+                    >
 
+                    <swiper-item class="subject-item"
+                     style="background-image:url(http://118.190.207.166:8000/personPage/images/img_2.jpeg)">
+                        <!--蒙版-->
+                        <view class="cover"></view>
 
+                        <view class="title-par">
+                          <view class="title">雁栖湖之旅-1</view>
+                        </view>
+                    </swiper-item>
 
+                    <swiper-item class="subject-item"
+                     style="background-image:url(http://118.190.207.166:8000/personPage/images/img_5.jpeg)">
 
+                        <!--蒙版-->
+                        <view class="cover"></view>
 
+                        <view class="title-par">
+                          <view class="title">雁栖湖之旅-2</view>
+                        </view>
+                    </swiper-item>
 
+                </swiper>
 
-
-
-    <!--轮播部分-->
-    <swiper class="subject"
-        indicator-dots="true"
-        indicator-color="rgba(0, 0, 0, .3)"
-        autoplay="true"
-        interval="5000"
-        >
-
-        <swiper-item class="subject-item"
-            wx:for="{{data}}" wx:key="index" wx:for-item="item"
-            style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529128475300&di=aad025cb62fd4cbaf2ce7b3d1e5b81b0&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F5366d0160924ab18778421c43ffae6cd7a890bb7.jpg)">
-
-            <!--蒙版-->
-            <view class="cover"></view>
-
-            <view class="title-par">
-              <view class="title">{{item.name ? item.name : ''}}</view>
             </view>
 
-        </swiper-item>
+            <!--横排两张图瀑布流-->
+            <view class="item-waterFall">
+                <!--
+                    <view wx:for="{{[1, 2, 3, 4]}}" wx:key="index" wx:for-item="item">
+                        <view class="of-img-par">
+                            <image src="http://118.190.207.166:8000/personPage/images/img_3.jpeg"></image>
+                        </view>
+                        <view class="text">我是最美丽的人</view>
+                    </view>
+                -->
 
-    </swiper>
+            </view>
 
+            <!--横版带描述图片资源-->
+            <view class="item-recource-1">
+                <image src="http://118.190.207.166:8000/personPage/images/img_4.jpeg"></image>
+
+                <view class="text">This is my first time to do this
+                      page of self web.I am very tense! Haha, please help a lot!</view>
+
+            </view>
+
+            <!--左图，右描述资源-->
+            <view class="left-img of-flex-x-start">
+                <view class="of-img-par">
+                    <image src="http://118.190.207.166:8000/personPage/images/img_7.jpeg"></image>
+                </view>
+                <view class="text">
+                    Hello, Every body. I’m Topay, Very happy t0 know your big family!
+                </view>
+            </view>
+
+            <!--右图，左描述资源-->
+            <!--
+            <view class="right-img of-flex-x-start">
+                <view class="text">
+                    Hello, Every body. I’m Topay, Very happy t0 know your big family!
+                </view>
+                <view class="of-img-par">
+                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529152940579&di=0f54118573a83bee39b10c1a7b96c152&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201411%2F14%2F20141114181154_MFsrY.jpeg"></image>
+                </view>
+            </view>
+            -->
+
+            <!--横排三张图-->
+            <view class="item-three-img">
+                <view class="img-part of-flex-x-center">
+                    <view class="of-img-par" wx:for="{{[1, 2, 3]}}" wx:key="index" wx:for-item="item">
+                        <image src="http://118.190.207.166:8000/personPage/images/img_6.jpeg"></image>
+                    </view>
+                </view>
+
+                <view class="img-context">
+                    This is my first time to do this
+                    page of self web.I am very tense! Haha, please help a lot!
+                </view>
+            </view>
+
+            <!--视频部分-->
+            <view class="item-video">
+                <video src="http://118.190.207.166:8000/personPage/video/IMG_6241.mp4"
+                objectFit="contain"></video>
+            </view>
+
+
+
+
+
+
+
+
+
+
+
+
+        </view>
+
+    </view>
 
 </scroll-view>

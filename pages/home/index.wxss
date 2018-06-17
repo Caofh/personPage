@@ -1,22 +1,62 @@
+.main {
+    background: #FFF2E2;
+    font-family: chalkduster;
+    color: #03A9F4;
+    text-align: center;
+    padding: 40rpx 0 40rpx 40rpx;
+}
 
+/*基本信息部分*/
+.introduce {
+    width: 670rpx;
+    margin-bottom: 80rpx;
+}
 .introduce .of-img-par {
     width: 200rpx;
     height: 230rpx;
+    margin-right: 70rpx;
+}
+.introduce .intro-content .name {
+    margin-bottom: 20rpx;
 }
 
+/*title部分*/
+.title {
+    width: 670rpx;
+    margin-bottom: 80rpx;
+}
 
+/*列表部分*/
+.base-list {
+    /*width: 670rpx;*/
+}
+.base-list .list-item .item-date {
+    width: 670rpx;
+    margin-bottom: 30rpx;
+}
+
+/*轮播部分*/
+.base-list .list-item .item-carousel {
+    margin-bottom: 40rpx
+}
+.base-list .list-item .item-carousel .carousel-title {
+    width: 670rpx;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+}
 /*专题轮播图样式*/
-.subject {
-  width: 100%;
+.base-list .list-item .item-carousel .subject {
+  width: 670rpx;
+  height: 440rpx;
   /*height:500rpx;*/
 }
-.subject .subject-item {
+.base-list .list-item .item-carousel .subject .subject-item {
   position:relative;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.subject .subject-item .cover {
+.base-list .list-item .item-carousel .subject .subject-item .cover {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -24,7 +64,7 @@
   height: 50%;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
 }
-.subject .subject-item .title-par {
+.base-list .list-item .item-carousel .subject .subject-item .title-par {
   width: 100%;
   position: absolute;
   left:0;
@@ -36,14 +76,115 @@
 
   /* background: linear-gradient(transparent, rgba(0, 0, 0, 0.3)); */
 }
-.subject .subject-item .title-par > view {
+.base-list .list-item .item-carousel .subject .subject-item .title-par > view {
   width: 100%;
   padding: 0 10px;
   margin-bottom: 15rpx;
 }
-.subject .subject-item .title-par .title {
+.base-list .list-item .item-carousel .subject .subject-item .title-par .title {
   font-size: 20px;
 }
-.subject .subject-item .title-par .sub-title {
+.base-list .list-item .item-carousel .subject .subject-item .title-par .sub-title {
   font-size: 16px;
 }
+
+/*列表瀑布流类型资源*/
+.base-list .list-item .item-waterFall {
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+.base-list .list-item .item-waterFall > view {
+    width: 320rpx;
+    margin-right: 30rpx;
+    margin-bottom: 20rpx;
+    float: left;
+}
+.base-list .list-item .item-waterFall > view .of-img-par {
+    width: 100%;
+    height: 400rpx;
+    margin-bottom: 10rpx;
+}
+.base-list .list-item .item-waterFall > view .text {
+    width: 100%;
+    text-align: left;
+    font-size: 30rpx;
+}
+
+/*横版带描述图片资源*/
+.base-list .list-item .item-recource-1 {
+    width: 670rpx;
+    margin-bottom: 20rpx;
+}
+.base-list .list-item .item-recource-1 image {
+    width: 100%;
+    height: 445rpx;
+    margin-bottom: 20rpx;
+}
+.base-list .list-item .item-recource-1 .text {
+    width: 100%;
+    text-align: left;
+    font-size: 30rpx;
+}
+
+/*左图，右描述资源*/
+.base-list .list-item .left-img {
+    margin-bottom: 20rpx;
+}
+.base-list .list-item .left-img .of-img-par {
+    width: 320rpx;
+    height: 425rpx;
+    margin-right: 30rpx;
+}
+.base-list .list-item .left-img .text {
+    width: 320rpx;
+    text-align: left;
+    font-size: 30rpx;
+}
+
+/*右图，左描述资源*/
+.base-list .list-item .right-img .of-img-par {
+    width: 320rpx;
+    height: 425rpx;
+    margin-bottom: 20rpx;
+}
+.base-list .list-item .right-img .text {
+    width: 320rpx;
+    text-align: left;
+    font-size: 30rpx;
+    margin-right: 30rpx;
+}
+
+/*横排三张图*/
+.item-three-img {
+    width: 670rpx;
+    margin-bottom: 20rpx;
+}
+.item-three-img .img-part {
+    margin-bottom: 10rpx;
+}
+.item-three-img .img-part .of-img-par {
+    width: 220rpx;
+    height: 290rpx;
+}
+
+/*视频部分*/
+.item-video {
+    width: 670rpx;
+}
+.item-video video {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
