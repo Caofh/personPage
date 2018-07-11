@@ -29,18 +29,14 @@ Page({
 
     // 请求首页数据
     // let url = requestApi.wechat_home // 首页接口地址
-    let url = 'https://tpdoc.cn/api/data_list' // 首页接口地址
+    let url = requestApi.homeList // 首页接口地址
     getData(url, that, function (data) {
-      console.log(data)
-
-      let realData = data.original.data || []
-
-      console.log(realData)
+      // console.log(data)
 
       // 取首页数据
-      that.setData({
-        data: realData
-      })
+      // that.setData({
+      //   data: realData
+      // })
       //
       // // 动态修改小程序的标题
       //
