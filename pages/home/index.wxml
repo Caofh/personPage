@@ -13,7 +13,7 @@
             <image src="http://118.190.207.166:8000/personPage/images/img_1.jpeg"></image>
         </view>
         <view class="intro-content of-flex-y-center" style="align-items: flex-start;">
-            <view class="name">Baby</view>
+            <view class="name">{{ userName }}</view>
             <view>Person Page</view>
         </view>
 
@@ -22,118 +22,88 @@
     <view class="title">What can you record forever</view>
 
     <view class="base-list">
-        <view class="list-item">
-            <view class="item-date">——2018-06-15 13:10:10——</view>
+        <view class="list-item" wx:for="{{data}}" wx:key="index" wx:for-item="item">
+            <view class="item-date">——{{ item.timestamp_str || '' }}——</view>
 
-            <!--轮播部分-->
-            <view class="item-carousel">
-                <view class="carousel-title">My funny video</view>
-                <swiper class="subject"
-                    indicator-dots="true"
-                    indicator-color="rgba(0, 0, 0, .3)"
-                    autoplay="true"
-                    interval="5000"
-                    >
+            <block wx:for="{{item.data}}" wx:key="key" wx:for-item="item_son">
+                <!--轮播部分-->
+                <view class="item-carousel" wx:if="{{item_son.source_type == 1}}">
+                    <view class="carousel-title">My funny video</view>
+                    <swiper class="subject"
+                        indicator-dots="true"
+                        indicator-color="rgba(0, 0, 0, .3)"
+                        autoplay="true"
+                        interval="5000"
+                        >
 
-                    <swiper-item class="subject-item"
-                     style="background-image:url(http://118.190.207.166:8000/personPage/images/img_2.jpeg)">
-                        <!--蒙版-->
-                        <view class="cover"></view>
+                        <swiper-item wx:for="{{item_son.data}}" wx:key="key" wx:for-item="item_son_1"
+                         class="subject-item"
+                         style="background-image:url({{item_son_1.source_img_url || ''}})">
+                            <!--蒙版-->
+                            <view class="cover"></view>
 
-                        <view class="title-par">
-                          <view class="title">雁栖湖之旅-1</view>
-                        </view>
-                    </swiper-item>
+                            <view class="title-par">
+                              <view class="title">{{item_son_1.source_title || ''}}</view>
+                            </view>
+                        </swiper-item>
 
-                    <swiper-item class="subject-item"
-                     style="background-image:url(http://118.190.207.166:8000/personPage/images/img_5.jpeg)">
+                    </swiper>
 
-                        <!--蒙版-->
-                        <view class="cover"></view>
+                </view>
 
-                        <view class="title-par">
-                          <view class="title">雁栖湖之旅-2</view>
-                        </view>
-                    </swiper-item>
-
-                </swiper>
-
-            </view>
-
-            <!--横排两张图瀑布流-->
-            <view class="item-waterFall">
-                <!--
-                    <view wx:for="{{[1, 2, 3, 4]}}" wx:key="index" wx:for-item="item">
+                <!--横排两张图瀑布流-->
+                <view class="item-waterFall" wx:if="{{item_son.source_type == 6}}">
+                    <view wx:for="{{item_son.data}}" wx:key="key" wx:for-item="item_son_1">
                         <view class="of-img-par">
-                            <image src="http://118.190.207.166:8000/personPage/images/img_3.jpeg"></image>
+                            <image src="{{item_son_1.source_img_url || ''}}"></image>
                         </view>
-                        <view class="text">我是最美丽的人</view>
+                        <view class="text">{{item_son_1.source_title || ''}}</view>
                     </view>
-                -->
 
-            </view>
-
-            <!--横版带描述图片资源-->
-            <view class="item-recource-1">
-                <image src="http://118.190.207.166:8000/personPage/images/img_4.jpeg"></image>
-
-                <view class="text">This is my first time to do this
-                      page of self web.I am very tense! Haha, please help a lot!</view>
-
-            </view>
-
-            <!--左图，右描述资源-->
-            <view class="left-img of-flex-x-start">
-                <view class="of-img-par">
-                    <image src="http://118.190.207.166:8000/personPage/images/img_7.jpeg"></image>
                 </view>
-                <view class="text">
-                    Hello, Every body. I’m Topay, Very happy t0 know your big family!
-                </view>
-            </view>
 
-            <!--右图，左描述资源-->
-            <!--
-            <view class="right-img of-flex-x-start">
-                <view class="text">
-                    Hello, Every body. I’m Topay, Very happy t0 know your big family!
-                </view>
-                <view class="of-img-par">
-                    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529152940579&di=0f54118573a83bee39b10c1a7b96c152&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201411%2F14%2F20141114181154_MFsrY.jpeg"></image>
-                </view>
-            </view>
-            -->
+                <!--横版带描述图片资源-->
+                <view class="item-recource-1" wx:if="{{item_son.source_type == 2}}">
+                    <image src="{{item_son.data[0].source_img_url || ''}}"></image>
 
-            <!--横排三张图-->
-            <view class="item-three-img">
-                <view class="img-part of-flex-x-center">
-                    <view class="of-img-par" wx:for="{{[1, 2, 3]}}" wx:key="index" wx:for-item="item">
-                        <image src="http://118.190.207.166:8000/personPage/images/img_6.jpeg"></image>
+                    <view class="text">{{item_son.data[0].source_content || ''}}</view>
+
+                </view>
+
+                <!--左图，右描述资源-->
+                <view class="left-img of-flex-x-start" wx:if="{{item_son.source_type == 3}}">
+                    <view class="of-img-par">
+                        <image src="{{item_son.data[0].source_img_url || ''}}"></image>
+                    </view>
+                    <view class="text">{{item_son.data[0].source_content || ''}}</view>
+                </view>
+
+                <!--右图，左描述资源-->
+                <view class="right-img of-flex-x-start" wx:if="{{item_son.source_type == 4}}">
+                    <view class="text">{{item_son.data[0].source_content || ''}}</view>
+                    <view class="of-img-par">
+                        <image src="{{item_son.data[0].source_img_url || ''}}"></image>
                     </view>
                 </view>
 
-                <view class="img-context">
-                    This is my first time to do this
-                    page of self web.I am very tense! Haha, please help a lot!
+                <!--横排三张图-->
+                <view class="item-three-img" wx:if="{{item_son.source_type == 5}}">
+                    <view class="img-part of-flex-x-center">
+                        <view class="of-img-par" wx:for="{{item_son.data}}" wx:key="key" wx:for-item="item_son_1">
+                            <image src="{{item_son_1.source_img_url || ''}}"></image>
+                        </view>
+                    </view>
+
+                    <view class="img-context">{{item_son.data[0].source_content || ''}}</view>
                 </view>
-            </view>
 
-            <!--视频部分-->
-            <view class="item-video">
-                <video src="http://118.190.207.166:8000/personPage/video/IMG_6241.mp4"
-                objectFit="contain"></video>
-            </view>
+                <!--视频部分-->
+                <view class="item-video" wx:if="{{item_son.source_type == 7}}">
+                    <video src="http://118.190.207.166:8000/personPage/video/IMG_6241.mp4"
+                    objectFit="contain"></video>
+                </view>
 
-
-
-
-
-
-
-
-
-
-
+            </block>
 
         </view>
 

@@ -1,50 +1,17 @@
-import fun_loop from '../../../utils/of-vendor/fun_loop'
-import { formatImage } from '../../../utils/of-vendor/formatImage'
-import imgZoom from '../../../utils/of-vendor/imgZoomAuto'
+import moment from './../../../utils/of-vendor/moment'
 
 function handle (data, obj) {
   var that = obj // 当前实例
 
   console.log(data)
 
-  const realData = data.original.data
-
-  let timeArr = []
-  realData.map((item) => {
-    const currentTimeStamp = item.timestamp || ''
-    if (timeArr.indexOf(currentTimeStamp) < 0) {
-      timeArr.push(currentTimeStamp)
-    }
+  let data_new = data.original.data || []
+  data_new.map((item) => {
+    item.timestamp_str = moment(parseInt(item.timestamp)).format('YY-MM-DD HH:mm:ss')
   })
 
-  // console.log(timeArr)
 
-  let dataArr = []
-  timeArr.map((item) => {
-    const timestamp = item
-
-    let currentObj = {}
-    realData.map((itemSon) => {
-      if (itemSon.timestamp == timestamp) {
-        currentObj.id = itemSon.id || ''
-        currentObj.id = itemSon.id || ''
-        currentObj.id = itemSon.id || ''
-        currentObj.id = itemSon.id || ''
-
-
-
-
-
-        // currentArr.push(itemSon)
-      }
-    })
-
-    dataArr.push(currentArr)
-  })
-
-  console.log(dataArr)
-
-
+  console.log(data_new)
 
 
 

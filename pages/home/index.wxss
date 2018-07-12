@@ -30,9 +30,14 @@
 .base-list {
     /*width: 670rpx;*/
 }
+.base-list .list-item {
+    margin-bottom: 100rpx;
+}
 .base-list .list-item .item-date {
     width: 670rpx;
     margin-bottom: 30rpx;
+    color: #335B89;
+    text-shadow:0.4em -0.3em 0.2em #ccc;
 }
 
 /*轮播部分*/

@@ -14,6 +14,8 @@ Page({
     brandImgHeight: 0, // 底部品牌图片的高度（解决图片自适应高度问题）
     resourceHeight: 0, // 资源图片的高度（解决图片自适应高度问题）
     scrollTop: 0, // 滚动容器的距上距离
+
+    userName: '', // 用户名称
     data: {}, // 首页请求数据
     shareTitle: '' // 分享标题title
   },
@@ -32,11 +34,14 @@ Page({
     let url = requestApi.homeList // 首页接口地址
     getData(url, that, function (data) {
       // console.log(data)
+      const realData = data.original.data || []
 
       // 取首页数据
-      // that.setData({
-      //   data: realData
-      // })
+      that.setData({
+        data: realData,
+        userName: realData[0].data[0].data[0].user_name || ''
+      })
+
       //
       // // 动态修改小程序的标题
       //
