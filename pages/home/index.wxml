@@ -1,12 +1,4 @@
-<scroll-view class="main"
-    scroll-y="true"
-    scroll-top="{{scrollTop}}"
-    style="width: {{winWidth}}px; height: {{winHeight}}px;"
-    upper-threshold="50"
-    lower-threshold="100"
-    bindscrolltolower="scrolltolower"
-    bindscroll="listenScroll"
-    >
+<view class="main">
 
     <view class="introduce of-flex-x-start">
         <view class="of-img-par">
@@ -109,4 +101,4 @@
 
     </view>
 
-</scroll-view>
+</view>
