@@ -44,7 +44,7 @@
 .base-list .list-item .item-carousel {
     margin-bottom: 40rpx
 }
-.base-list .list-item .item-carousel .carousel-title {
+.base-list .list-item .carousel-title {
     width: 670rpx;
     margin-bottom: 20rpx;
     font-size: 30rpx;

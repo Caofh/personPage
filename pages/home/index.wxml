@@ -24,11 +24,11 @@
     <view class="base-list">
         <view class="list-item" wx:for="{{data}}" wx:key="index" wx:for-item="item">
             <view class="item-date">——{{ item.timestamp_str || '' }}——</view>
-
+            <view class="carousel-title">My funny video</view>
+            
             <block wx:for="{{item.data}}" wx:key="key" wx:for-item="item_son">
                 <!--轮播部分-->
                 <view class="item-carousel" wx:if="{{item_son.source_type == 1}}">
-                    <view class="carousel-title">My funny video</view>
                     <swiper class="subject"
                         indicator-dots="true"
                         indicator-color="rgba(0, 0, 0, .3)"
