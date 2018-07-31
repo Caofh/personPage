@@ -1,0 +1,19 @@
+<view class="login" wx:if="{{show}}" style="height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
+
+   <view class="base-content">
+        <view class="title">Please Login</view>
+        <view class="of-flex-x-center">
+            <view class="account"><input bindinput="bindAccountInput" type="text" placeholder="请输入手机号或邮箱" value="{{account}}" /></view>
+        </view>
+
+        <view class="of-flex-x-center">
+            <view class="password"><input bindinput="bindPasswordInput" type="text" placeholder="请输入密码" value="{{password}}" /></view>
+        </view>
+
+        <view class="btn-group of-flex-x-center">
+            <view class="btn" bindtap="login">Login</view>
+        </view>
+
+   </view>
+
+</view>

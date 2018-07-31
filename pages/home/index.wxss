@@ -8,8 +8,16 @@
 
 /*基本信息部分*/
 .introduce {
+    position: relative;
     width: 670rpx;
     margin-bottom: 80rpx;
+}
+.introduce .logout {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 80rpx;
+    heihgt: 30rpx;
 }
 .introduce .of-img-par {
     width: 200rpx;

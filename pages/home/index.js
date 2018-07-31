@@ -42,20 +42,14 @@ Page({
         userName: realData[0].data[0].data[0].user_name || ''
       })
 
-      //
-      // // 动态修改小程序的标题
-      //
-      // let appTitle = data.original.data.title_config && data.original.data.title_config.app_title ?
-      //   data.original.data.title_config.app_title : ''
-      // getApp().setTitle(appTitle)
-      //
-      // // 动态修改分享标题title
-      // let shareTitle = data.original.data.title_config && data.original.data.title_config.share_title ?
-      //   data.original.data.title_config.share_title : ''
-      // that.setData({
-      //   shareTitle: shareTitle
-      // })
+    })
 
+  },
+  logout () {
+    wx.removeStorageSync('user_id')
+    // 跳转到登录页
+    wx.navigateBack({
+      url:"/pages/login/login"
     })
 
   },

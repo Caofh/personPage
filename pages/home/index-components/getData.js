@@ -3,12 +3,14 @@ import handle from './handle'
 
 function getData (url, obj, callback, complete) {
 
+  const userId = wx.getStorageSync('user_id')
+
   getApp().ajax({
     url: url || '',
     type: 'GET',
     login: false,
     para: {
-      brand_id: constants.BRAND_ID
+      user_id: userId
     },
     success (data) {
       // console.log(data)

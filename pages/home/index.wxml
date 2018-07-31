@@ -9,6 +9,8 @@
             <view>Person Page</view>
         </view>
 
+        <view class="logout of-btn" bindtap="logout">退出</view>
+
     </view>
 
     <view class="title">What can you record forever</view>
