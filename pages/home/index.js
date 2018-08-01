@@ -16,7 +16,8 @@ Page({
     scrollTop: 0, // 滚动容器的距上距离
 
     userName: '', // 用户名称
-    data: {}, // 首页请求数据
+    imgUrl: '', // 用户头像
+    data: [], // 首页请求数据
     shareTitle: '' // 分享标题title
   },
 
@@ -24,13 +25,19 @@ Page({
    * 页面初始化
    */
   onLoad: function (options) {
-    // console.log(options)
-    // return false
+
+    const imgUrl = options.img_url || ''
+    this.setData({
+      imgUrl: imgUrl
+    })
 
     let that = this
 
     // 获取系统信息并设置容器宽高
     baseSetting(that)
+
+    // console.log(options)
+    // return false
 
     // 请求首页数据
     let url = requestApi.homeList // 首页接口地址

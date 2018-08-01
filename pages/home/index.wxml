@@ -1,8 +1,8 @@
-<view class="main">
+<view class="main" style="min-height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
 
     <view class="introduce of-flex-x-start">
         <view class="of-img-par">
-            <image src="http://118.190.207.166:8000/personPage/images/img_1.jpeg"></image>
+            <image src="{{imgUrl}}"></image>
         </view>
         <view class="intro-content of-flex-y-center" style="align-items: flex-start;">
             <view class="name">{{ userName }}</view>
@@ -15,7 +15,7 @@
 
     <view class="title">What can you record forever</view>
 
-    <view class="base-list">
+    <view class="base-list" wx:if="{{data.length}}">
         <view class="list-item" wx:for="{{data}}" wx:key="index" wx:for-item="item">
             <view class="item-date">——{{ item.timestamp_str || '' }}——</view>
             <view class="carousel-title">My funny video</view>
@@ -101,6 +101,9 @@
 
         </view>
 
+    </view>
+    <view class="base-list of-flex-x-center" wx:else>
+        <image class="loading" src="../../images/pages/home/loading.gif" />
     </view>
 
 </view>

@@ -1,7 +1,7 @@
 <view class="list" style="min-height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
 
     <navigator wx:for="{{data}}" wx:key="index" wx:for-item="item"
-        url="/pages/home/index?id={{ item.id }}"
+        url="/pages/home/index?id={{ item.id }}&img_url={{item.uploadImgPath}}"
         data-id="{{ item.id || '' }}"
         class="item of-flex-x-start"
         style="align-items: flex-start;">

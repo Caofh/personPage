@@ -38,6 +38,10 @@
 .base-list {
     /*width: 670rpx;*/
 }
+.base-list .loading {
+    width: 60rpx;
+    height: 60rpx;
+}
 .base-list .list-item {
     margin-bottom: 100rpx;
 }
