@@ -1,17 +1,17 @@
 import {constants} from '../../../sdk/constants'
 import handle from './handle'
 
-function getData (url, obj, params, callback, complete) {
+function getData (url, obj, callback, complete) {
 
-  // const userId = wx.getStorageSync('user_id')
-  // console.log(params)
-  // return false
+  const userId = wx.getStorageSync('user_id')
 
   getApp().ajax({
     url: url || '',
     type: 'GET',
     login: false,
-    para: params,
+    para: {
+      user_id: userId
+    },
     success (data) {
       // console.log(data)
       // return false

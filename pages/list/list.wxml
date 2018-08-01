@@ -1,0 +1,19 @@
+<view class="list" style="min-height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
+
+    <navigator wx:for="{{data}}" wx:key="index" wx:for-item="item"
+        url="/pages/home/index?id={{ item.id }}"
+        data-id="{{ item.id || '' }}"
+        class="item of-flex-x-start"
+        style="align-items: flex-start;">
+
+        <view class="of-img-par">
+            <image src="{{ item.uploadImgPath || '' }}" />
+        </view>
+        <view class="content of-flex-y-between" style="align-items: flex-start;">
+            <view class="nickname">{{ item.nickname || '-' }}</view>
+            <view class="of-ellipsis-single">{{ item.selfWord || '' }}</view>
+        </view>
+
+    </navigator>
+
+</view>

@@ -3,7 +3,7 @@ import moment from './../../../utils/of-vendor/moment'
 function handle (data, obj) {
   var that = obj // 当前实例
 
-  console.log(data)
+  // console.log(data)
 
   let data_new = data.original.data || []
 
@@ -17,7 +17,7 @@ function handle (data, obj) {
     return a.timestamp < b.timestamp
   })
 
-  console.log(data_new)
+  // console.log(data_new)
 
 }
 

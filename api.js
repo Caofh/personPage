@@ -11,6 +11,7 @@ let requestApi = {
   // wechat_home: HOST_URL + '/wechat_home',       // 获取首页数据
 
   homeList: HOST_URL + '/api/person_page', // 获取数据列表接口
+  userList: HOST_URL + '/api/person_page/user_list', // 获取用户列表接口
   login: HOST_URL + '/account/personLogin' // 登录接口
 
 }
