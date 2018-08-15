@@ -1,7 +1,11 @@
+page {
+    background: #FFF2E2;
+}
 .list {
     background: #FFF2E2;
 }
 .list .item {
+    box-sizing: border-box;
     width: 750rpx;
     height: 200rpx;
     padding: 10rpx 10rpx 0 10rpx;
