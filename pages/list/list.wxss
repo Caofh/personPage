@@ -22,3 +22,39 @@
     font-size: 24rpx;
 }
 
+
+/*弹窗样式*/
+.userinfo-dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.userinfo-dialog .base-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -150rpx;
+    margin-left: -250rpx;
+    width: 500rpx;
+    height: 300rpx;
+    background: #fff;
+    border: 1rpx solid #ccc;
+    border-radius: 5rpx;
+    color: #000;
+}
+.userinfo-dialog .base-content .title {
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.userinfo-dialog .base-content .confirm {
+    background: #f71;
+    color: #fff;
+    margin-left: 80rpx;
+}
+.userinfo-dialog .base-content .btn-group {
+    margin-top: 50rpx;
+}
+

@@ -16,5 +16,19 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#f71",
+    "list": [{
+      "pagePath": "pages/list/list",
+      "text": "列表",
+      "iconPath": "images/pages/common/home_icon.png",
+      "selectedIconPath": "images/pages/common/home_icon_selected.png"
+    }, {
+      "pagePath": "pages/login/login",
+      "text": "我的",
+      "iconPath": "images/pages/common/me_icon.png",
+      "selectedIconPath": "images/pages/common/me_icon_selected.png"
+    }]
   }
 }
