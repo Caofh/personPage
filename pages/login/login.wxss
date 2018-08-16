@@ -1,5 +1,17 @@
 .login {
+    position: relative;
     /*background: #FFF2E2;*/
+}
+.login .back {
+    position: absolute;
+    top:10rpx;
+    left:20rpx;
+    width:50rpx;
+    height:40rpx;
+}
+.login .back image {
+    width: 100%;
+    height: 100%;
 }
 .base-content {
     width: 100%;

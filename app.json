@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/list/list",
+    "pages/me/index",
     "pages/home/index",
 
     "pages/login/login",
@@ -25,7 +26,7 @@
       "iconPath": "images/pages/common/home_icon.png",
       "selectedIconPath": "images/pages/common/home_icon_selected.png"
     }, {
-      "pagePath": "pages/login/login",
+      "pagePath": "pages/me/index",
       "text": "我的",
       "iconPath": "images/pages/common/me_icon.png",
       "selectedIconPath": "images/pages/common/me_icon_selected.png"

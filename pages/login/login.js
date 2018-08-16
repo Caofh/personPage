@@ -31,6 +31,7 @@ Page({
 
   },
   onShow () {
+
     this.setData({
       account: '',
       password: ''
@@ -48,6 +49,17 @@ Page({
         show: true
       })
     }
+
+  },
+  onUnload: function () { //如果页面被卸载时被执行
+    wx.switchTab({
+      url: '/pages/list/list',
+    })
+  },
+  back () {
+    wx.switchTab({
+      url: '/pages/list/list'
+    })
 
   },
   bindAccountInput (e) {

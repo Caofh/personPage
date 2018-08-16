@@ -1,4 +1,7 @@
 <view class="login" wx:if="{{show}}" style="height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
+   <view class="back" bindtap="back">
+    <image src="../../images/pages/login/back.png" />
+   </view>
 
    <view class="base-content">
         <view class="title">Please Login</view>

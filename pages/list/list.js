@@ -16,7 +16,7 @@ Page({
     scrollTop: 0, // 滚动容器的距上距离
 
     data: {}, // 首页请求数据
-    userinfoDialog: false // 微信获取用户信息弹窗显示标识
+
   },
 
   /**
@@ -24,11 +24,6 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-
-    // 获取用户信息(只有localstorage里不存在userinfo信息时才执行)
-    if ( !(wx.getStorageSync('userinfo') && wx.getStorageSync('userinfo').nickName)) {
-      this.getUserInfo()
-    }
 
     // 获取系统信息并设置容器宽高
     baseSetting(that)
@@ -49,88 +44,6 @@ Page({
     })
 
   },
-
-  userinfoCancel () {
-    this.setData({
-      userinfoDialog: false
-    })
-  },
-  userinfoConfirm () {
-    this.setData({
-      userinfoDialog: false
-    })
-  },
-  bindGetUserInfo (e) {
-    // console.log(e.detail.userInfo)
-    this.stoBaseInfo(e.detail.userInfo)
-
-  },
-
-
-  // 获取用户信息接口
-  getUserInfo () {
-    const that = this
-
-    wx.checkSession({
-      success: function(){
-        //session_key 未过期，并且在本生命周期一直有效
-
-        // 查看是否授权,可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.userInfo" 这个 scope
-        wx.getSetting({
-          success: function(res){
-            if (res.authSetting['scope.userInfo']) {
-              // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-              wx.getUserInfo({
-                success: function(res) {
-                  // console.log(res.userInfo)
-
-                  that.stoBaseInfo(res.userInfo)
-                }
-              })
-
-            } else {
-              that.setData({
-                userinfoDialog: true // 显示获取用户信息弹窗
-              })
-
-            }
-
-          }
-        })
-
-      },
-      fail: function(){
-        // session_key 已经失效，需要重新执行登录流程
-        getApp().login()
-
-      }
-    })
-  },
-  // 拼合用户信息和openid等信息，存入storage
-  stoBaseInfo (userInfo) {
-    // console.log(userInfo)
-    let baseInfo = userInfo || {}
-
-    getApp().login((data) => {
-      // console.log(data)
-
-      baseInfo.openid = data.original.openid || ''
-      baseInfo.session_key = data.original.session_key || ''
-
-      // console.log(baseInfo)
-      wx.setStorageSync('userinfo', baseInfo)
-
-    })
-
-
-
-
-  },
-
-
-
-
-
 
   scrolltolower () {},
   listenScroll () {},

@@ -1,0 +1,14 @@
+<view class="main" style="min-height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
+
+我的页面
+</view>
+
+<view wx:if="{{userinfoDialog}}" class="userinfo-dialog" style="min-height:{{winHeight + 'px'}};width:{{winWidth + 'px'}}">
+    <view class="base-content">
+        <view class="title">允许"颖秀"获取用户信息</view>
+        <view class="btn-group of-flex-x-center">
+            <view><button bindtap="userinfoCancel">取消</button></view>
+            <view><button class="confirm" bindtap="userinfoConfirm" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">确定</button></view>
+        </view>
+    </view>
+</view>
